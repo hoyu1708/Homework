@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-// 遞迴版本
+//遞迴版本
 
 int ackermann_recursive(int m, int n) {
     if (m == 0) return n + 1;
@@ -10,7 +10,7 @@ int ackermann_recursive(int m, int n) {
     return ackermann_recursive(m - 1, ackermann_recursive(m, n - 1));
 }
 
-// 非遞迴版本
+//非遞迴版本
 
 int ackermann_iterative(int m, int n) {
     struct Frame { int m; int n; bool inner_done; };
@@ -55,4 +55,5 @@ int main() {
     cout << "Iterative: Ackermann(" << m << "," << n << ") = "
         << ackermann_iterative(m, n) << endl;
 }
+
 
