@@ -6,7 +6,7 @@
 
 ## Problem 1 — Ackermann Function
 
-### 解題說明
+## 解題說明
 
 本題要求實現 **Ackermann 函數 (Ackermann Function)**，
 它是一個經典的遞迴函數，定義如下：
