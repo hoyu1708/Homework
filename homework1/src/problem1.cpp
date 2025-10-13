@@ -2,18 +2,16 @@
 #include <vector>
 using namespace std;
 
-// ------------------------
-// »¼°jª©¥»
-// ------------------------
+// éè¿´ç‰ˆæœ¬
+
 int ackermann_recursive(int m, int n) {
     if (m == 0) return n + 1;
     if (n == 0) return ackermann_recursive(m - 1, 1);
     return ackermann_recursive(m - 1, ackermann_recursive(m, n - 1));
 }
 
-// ------------------------
-// «D»¼°jª©¥»¡]¨Ï¥Î stack ¼ÒÀÀ»¼°j¡^
-// ------------------------
+// ééè¿´ç‰ˆæœ¬
+
 int ackermann_iterative(int m, int n) {
     struct Frame { int m; int n; bool inner_done; };
     vector<Frame> stack;
@@ -26,7 +24,7 @@ int ackermann_iterative(int m, int n) {
             result = top.n + 1;
             stack.pop_back();
             if (!stack.empty()) {
-                stack.back().n = result; // §âµ²ªG¶Ç¦^¥~¼h
+                stack.back().n = result; 
             }
         }
         else if (top.n == 0) {
@@ -35,11 +33,11 @@ int ackermann_iterative(int m, int n) {
         }
         else if (!top.inner_done) {
             top.inner_done = true;
-            stack.push_back({ top.m, top.n - 1, false }); // ­pºâ¤º¼h
+            stack.push_back({ top.m, top.n - 1, false }); 
         }
         else {
             top.m -= 1;
-            top.n = result;  // ¥Î¤º¼hµ²ªG§ó·s¥~¼h
+            top.n = result; 
             top.inner_done = false;
         }
     }
@@ -47,9 +45,7 @@ int ackermann_iterative(int m, int n) {
     return result;
 }
 
-// ------------------------
-// ¥Dµ{¦¡
-// ------------------------
+
 int main() {
     int m = 3, n = 2;
 
@@ -59,3 +55,4 @@ int main() {
     cout << "Iterative: Ackermann(" << m << "," << n << ") = "
         << ackermann_iterative(m, n) << endl;
 }
+
