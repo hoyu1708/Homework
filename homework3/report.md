@@ -4,7 +4,7 @@
 
 ## 解題說明
 
-本作業的目標是設計一個 C++ `Poly`類別。根據作業要求，我們必須使用帶有 Header Node 的 **Circular Linked ListCi 來儲存多項式的每一項。每一項資料包含係數 (`c`) 和指數 (`e`)。
+本作業的目標是設計一個 C++ `Poly`類別。根據作業要求，我們必須使用帶有 **Header Node** 的 **Circular Linked ListCi** 來儲存多項式的每一項。每一項資料包含係數 (`c`) 和指數 (`e`)。
 
 為了提升記憶體效率，作業要求實作 **Available List** 機制。當節點被刪除時，不直接歸還給系統，而是存入一個靜態的 `Avail` 串列；當需要新節點時，優先從 `Avail` 取出，減少 `new` 和 `delete` 的次數。
 
